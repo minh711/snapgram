@@ -1,8 +1,18 @@
-import React from 'react'
+import { Outlet, Navigate } from 'react-router-dom';
 
-const Authlayout = () => {
+const Authlayout = () => { 
+  const isAuthenticated = false;
+
   return (
-    <div>Authlayout</div>
+    <>
+      {isAuthenticated ? (
+        <Navigate to="/" />
+      ): (
+        <section>
+          <Outlet />
+        </section>
+      )} 
+    </>
   )
 }
 
