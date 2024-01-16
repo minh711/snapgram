@@ -6,7 +6,7 @@ import SignupForm from './_auth/forms/SignupForm';
 import Authlayout from './_auth/Authlayout';
 import RootLayout from './_root/RootLayout';
 import './globals.css';
-import { Toaster } from '@/components/toast';
+import { Toaster } from '@/components/ui/toaster';
 
 const App = () => {
   return (
