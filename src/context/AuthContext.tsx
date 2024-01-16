@@ -4,13 +4,12 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 export const INITIAL_USER = {
-  id: '',
-  name: '',
-  username: '',
-  email: '',
-  password: '',
-  imageUrl: '',
-  bio: '',
+  id: "",
+  name: "",
+  username: "",
+  email: "",
+  imageUrl: "",
+  bio: "",
 };
 
 const INITIAL_STATE = {
@@ -69,9 +68,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const cookieFallback = localStorage.getItem("cookieFallback");
     if (
-      cookieFallback === "[]" //||
-      // cookieFallback === null ||
-      // cookieFallback === undefined
+      cookieFallback === "[]" ||
+      cookieFallback === null ||
+      cookieFallback === undefined
     ) {
       navigate("/sign-in");
     }
