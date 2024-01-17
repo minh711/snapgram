@@ -1,15 +1,15 @@
-import { getCurrentUser } from '@/lib/appwrite/api';
-import { IUser } from '@/types';
 import { createContext, useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { IUser } from '@/types';
+import { getCurrentUser } from '@/lib/appwrite/api';
 
 export const INITIAL_USER = {
-  id: "",
-  name: "",
-  username: "",
-  email: "",
-  imageUrl: "",
-  bio: "",
+  id: '',
+  name: '',
+  username: '',
+  email: '',
+  imageUrl: '',
+  bio: '',
 };
 
 const INITIAL_STATE = {
@@ -52,10 +52,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           bio: currentAccount.bio,
         });
         setIsAuthenticated(true);
-
         return true;
       }
-
       return false;
     } catch (error) {
       console.error(error);
@@ -66,15 +64,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   useEffect(() => {
-    const cookieFallback = localStorage.getItem("cookieFallback");
+    const cookieFallback = localStorage.getItem('cookieFallback');
     if (
-      cookieFallback === "[]" ||
+      cookieFallback === '[]' ||
       cookieFallback === null ||
       cookieFallback === undefined
     ) {
-      navigate("/sign-in");
+      navigate('/sign-in');
     }
-
     checkAuthUser();
   }, []);
 
@@ -86,7 +83,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setIsAuthenticated,
     checkAuthUser,
   };
-
+  
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
