@@ -1,6 +1,5 @@
 import { ID, Query } from 'appwrite';
-
-import { INewUser } from "@/types";
+import { INewUser } from '@/types';
 import { account, appwriteConfig, avatars, databases } from './config';
 
 export async function createUserAccount(user: INewUser) {
@@ -58,7 +57,6 @@ export async function signInAccount(user: {
 }) {
   try {
     const session = await account.createEmailSession(user.email, user.password);
-
     return session;
   } catch (error) {
     console.log(error);   
@@ -87,8 +85,7 @@ export async function getCurrentUser() {
 
 export async function signOutAccount() {
   try {
-    const session = await account.deleteSession("current");
-
+    const session = await account.deleteSession('current');
     return session;
   } catch (error) {
     console.log(error); 
