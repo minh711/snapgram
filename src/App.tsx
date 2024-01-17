@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-
 import { Home } from './_root/pages';
 import SigninForm from './_auth/forms/SigninForm';
 import SignupForm from './_auth/forms/SignupForm';
@@ -10,15 +9,14 @@ import { Toaster } from '@/components/ui/toaster';
 
 const App = () => {
   return (
-    <main className="flex h-screen">
+    <main className='flex h-screen'>
       <Routes>
         {/* public routes */}
         <Route element={<Authlayout />}>
-          <Route path="/sign-in" element={<SigninForm />} />
-          <Route path="/sign-up" element={<SignupForm />} />
+          <Route path='/sign-in' element={<SigninForm />} />
+          <Route path='/sign-up' element={<SignupForm />} />
         </Route>
         
-
         {/* public routes */}
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />  
