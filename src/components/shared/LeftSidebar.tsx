@@ -38,10 +38,8 @@ const LeftSidebar = () => {
             <p className='body-bold'>
               {user.name}
             </p>
-            <p className='small-regular'>
-              <p className='text-light-3'>
+            <p className='small-regular text-light-3'>
                 {user.username}
-              </p>
             </p>
           </div>
         </Link>
