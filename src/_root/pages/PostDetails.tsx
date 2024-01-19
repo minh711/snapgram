@@ -2,13 +2,14 @@ import Loader from "@/components/shared/Loader";
 import PostStats from "@/components/shared/PostStats";
 import { Button } from "@/components/ui/button";
 import { useUserContext } from "@/context/AuthContext";
-import { deletePost } from "@/lib/appwrite/api";
+// import { deletePost } from "@/lib/appwrite/api";
 import { useGetPostById } from "@/lib/react-query/queriesAndMutations";
 import { formatDateString } from "@/lib/utils";
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+// import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const PostDetails = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const { id } = useParams();
   const { data: post, isPending } = useGetPostById(id || '');
